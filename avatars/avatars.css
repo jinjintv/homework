@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+}
+
+img {
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+}
+.main {
+    display: flow-root;
+    width: 360px;
+    position: absolute;
+    top: 30%;
+    left: 30%;
+}
+
+.face-img {
+    float: left;
+    position: relative;
+}
+
+.face-img:nth-child(n + 2){
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.status {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    background-color: #DBDBDB;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+
+.online {
+    background-color: #4CFE88;
+}
+
+@supports (display: flex) {
+    .main {
+        display: flex;
+        flex-flow: row wrap;
+        margin: auto;
+    }
+    .faces2 {
+        order: -1;
+    }
+}

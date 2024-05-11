@@ -1,0 +1,199 @@
+/* 컬러, 기본 박스 사이징 설정 */
+
+:root {
+    --focusStyle: #24388d;
+    --inputBasic: #dadada;
+    --inputFocus: #e9f0fd;
+    --naverGreen: #03cf5d;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+  }
+
+/* 공통 */
+
+html {
+    font-size: 16px;
+    color: #181818;
+}
+
+* {
+    margin: 0;
+}
+
+/* 모바일 */
+
+.login-ui {
+    --border-color: var(--inputBasic);
+    position: relative;
+    text-align: center;
+    margin-top: 5rem;
+    padding: 0 1.25rem;
+    font-size: 1rem;
+
+    fieldset {
+        border: 0;
+    }
+
+    .logo:focus {
+        outline: 1px solid var(--focusStyle);
+    }
+
+    /* form */
+    .loginForm {
+        margin-top: 2rem;
+
+        input {
+            /* flex-grow: 1; */
+            border: 1px solid var(--inputBasic);
+            padding: 1rem;
+            font-size: 14px;
+            height: 45px;
+            margin-bottom: 0.5rem;
+            width: 100%;
+        }
+        input:focus {
+            background: var(--inputFocus);
+            outline: 1px solid var(--naverGreen);
+        }
+
+        button {
+            margin-top: 20px;
+            height: 45px;
+            cursor: pointer;
+            background-color: var(--naverGreen);
+            color: #fff;
+            padding: 1rem;
+            border: 0;
+            width: 100%;
+        }
+        button:focus {
+            outline: 1px solid var(--focusStyle);
+        }
+    }
+
+    /* ul */
+
+    .loginInfo {
+        display: flex; 
+        justify-content: flex-end;
+        list-style: none;
+        padding: 0;
+        margin-top: 0.3rem;
+        margin-right: 1rem;
+
+
+        .login-save {
+            display: flex;
+            align-items: center;
+
+            input {
+                position: absolute;
+                appearance: none;
+                width: 24px;
+                height: 24px;
+                margin-right: 5px;
+                border: 0;
+            }
+            
+            label {
+                white-space: nowrap;
+                background: url(./icons/unchecked.svg) no-repeat 0 0 /contain;
+                padding-left: 1.75rem;
+            }
+
+            input:checked + label {
+                background: url(./icons/checked.svg) no-repeat 0 0 /contain;
+            }
+
+            input:focus{
+                outline: none;
+                outline-offset: 4px;
+              }
+              
+              input:focus-visible{
+                outline: 1px solid var(--focusStyle);
+                width: 20px;
+                height: 20px;
+              }
+        }
+
+        .login-ip {
+            display: none;
+
+        }
+    }
+}
+
+/* 데스크탑 */
+
+@media screen and (min-width : 768px) {
+    .login-ui {
+        position: relative;
+        text-align: center;
+    
+        /* form */
+        .loginForm {
+            margin-top: 2rem;
+
+            input {
+                width: 500px;
+            }
+            button {
+                width: 500px;
+            }
+        }
+    
+        /* ul */
+    
+        .loginInfo {
+            text-align: center;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+    
+    
+            .login-ip {
+                display: flex;
+                
+                a {
+                    text-decoration: none;
+                    color: inherit;
+                    margin-right: 5px;
+                }
+                a:focus-visible {
+                    outline: 1px solid var(--focusStyle);
+                }
+
+                input {
+                    display: none;
+                }
+
+                .on {
+                    color: var(--naverGreen);
+                    cursor: pointer;
+                }
+
+                .off {
+                    color: #575757;
+                    cursor: pointer;
+                }
+
+                #on:checked + label[for="on"] {
+                    display: none;
+                }
+
+                #off:checked + label[for="off"] {
+                    display: none;
+                }
+
+        }
+
+    }
+        
+       
+}
+
+}

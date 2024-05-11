@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>네이버 로그인</title>
+    <link
+      href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT/fonts/variable/woff2/SUIT-Variable.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="naver.css">
+</head>
+<body>
+    <section class="login-ui">
+        <a href="https://www.naver.com/" class="logo">
+            <picture>
+                <source srcset="./icons/logo.svg" type="image/svg+xml">
+                <img src="./icons/logo.png" alt="네이버 로고">
+            </picture>
+        </a>
+        <form action="/" class="loginForm">
+            <fieldset>
+                <legend class="sr-only">로그인 폼</legend>
+                <div role="group" class="form-input">
+                    <label for="user-id" class="sr-only">아이디(이메일) 입력란</label>
+                    <input type="email" id="userId" required placeholder="아이디(이메일)" name="userId" aria-required="true">
+                </div>
+                <div role="group" class="form-input">
+                    <label for="user-id" class="sr-only">비밀번호 입력란</label>
+                    <input type="password" id="userPwd" required placeholder="비밀번호" name="userPwd" aria-required="true">
+                </div>
+                <button type="button" class="loginBtn">로그인</button>
+            </fieldset>
+        </form>
+        <ul role="group" class="loginInfo">
+            <li class="login-save">
+                <input type="checkbox" name="loginSave" id="loginSave">
+                <label for="loginSave">로그인 상태유지</label>
+            </li>
+            <li class="login-ip">
+                <label for="ip-security" class="sr-only">IP 보안</label>
+                <a href="ip_security.html" target="_blank" role="link">IP 보안</a>
+                <input type="radio" name="ip-security" id="on">
+                <label for="on" class="on">ON</label>
+                <input type="radio" name="ip-security" id="off" checked>
+                <label for="off" class="off">OFF</label>
+            </li>
+        </ul>
+    </section>
+</body>
+</html>

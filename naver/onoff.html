@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>On/Off Button</title>
+<style>
+/* Hide the radio input */
+.radio-input {
+    display: none;
+}
+
+/* Style for the label */
+.radio-label {
+    display: inline-block;
+    cursor: pointer;
+    padding: 10px 20px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+}
+
+/* Style for when radio is checked (ON state) */
+#on:checked + .radio-label {
+    background-color: green;
+    color: white;
+}
+
+/* Style for when radio is not checked (OFF state) */
+#off:checked + .radio-label {
+    background-color: red;
+    color: white;
+}
+
+/* Hide the other label when radio is checked */
+#on:checked + .radio-label + #off-label,
+#off:checked + .radio-label + #on-label {
+    display: none;
+}
+</style>
+</head>
+<body>
+
+<!-- Radio input for ON state -->
+<input type="radio" name="on-off" id="on" class="radio-input" checked>
+<label for="on" class="radio-label" id="on-label">On</label>
+
+<!-- Radio input for OFF state -->
+<input type="radio" name="on

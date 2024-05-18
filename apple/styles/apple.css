@@ -1,0 +1,215 @@
+@import url(reset.css);
+@import url(base.css);
+@import url(theme.css);
+
+/* 카드 레이아웃 */
+
+.container{
+    display: flex;
+    flex-flow: column nowrap;
+  
+    .main{
+      flex: 1 0 auto;
+      gap: var(--large-spacing);
+    }
+
+    .card {
+      max-width: 1920px;
+      width: 100%;
+      height: var(--size);
+      justify-content: center;
+      text-align: center;
+    }
+
+  }
+
+/* 카드 컴포넌트 */
+
+  .title {
+    font-size: var(--large-text);
+    margin-top: var(--large-spacing);
+    margin-bottom: var(--small-spacing);
+    font-weight: bold;
+  }
+  .subT {
+    font-size: var(--base-text);
+    margin-bottom: var(--line-normal);
+  }
+  .subTarea {
+    margin-bottom: var(--x-small-spacing);
+  }
+
+  .white {
+    color: var(--white);
+  }
+  .black {
+    color: var(--black);
+  }
+  .release {
+    color: var(--gray);
+    font-size: var(--small-text);
+    margin-top: var(--small-spacing);
+  }
+
+  ul {
+    display: flex;
+    justify-content: center;
+    margin: var(--x-small-spacing);
+  }
+
+  button {
+    border-radius: 30px;
+    width: 80px;
+    height: 32px;
+    font-size: var(--xx-small-text);
+    padding: var(--x-small-spacing);
+    cursor: pointer;
+  }
+  
+  .more {
+    color: var(--white);
+    margin-right: var(--base-spacing);
+  }
+
+  .blue {
+    background-color: var(--blue-300);
+    border: none;
+  }
+  .blue:hover {
+    background-color: var(--blue-400);
+  }
+
+  .blackBtn {
+    background-color: var(--black);
+    border: none;
+  }
+  .blackBtn:hover {
+    background-color: var(--gray);
+  }
+
+  .price1 {
+    color: var(--blue-100);
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid var(--blue-100);
+  }
+  .price1:hover{
+    color: var(--white);
+    background-color: var(--blue-300);
+  }
+  .price2 {
+    color: var(--black);
+    background-color: rgba(0, 0, 0, 0);
+    border: 1px solid var(--black);
+  }
+  .price2:hover{
+    color: var(--white);
+    background-color: var(--gray);
+  }
+
+  /* 카드 배경 */
+
+  .ipadPro {
+    background-image: image-set(url('../products/ipad_pro.jpeg')1x, url('../products/ipad_pro_2x.jpeg')2x);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .ipadAir {
+    background-image: image-set(url('../products/ipad_air.jpeg')1x, url('../products/ipad_air_2x.jpeg')2x);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .iphonePro {
+    background-image: image-set(url('../products/iphone15_pro.jpeg')1x, url('../products/iphone15_pro_2x.jpeg')2x);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .iphone {
+    background-image: image-set(url('../products/iphone15.jpeg')1x, url('../products/iphone15_2x.jpeg')2x);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .watch {
+    background-image: image-set(url('../products/apple_watch.jpeg')1x, url('../products/apple_watch_2x.jpeg')2x);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .macbook {
+    background-image: image-set(url('../products/macbook_air.jpeg')1x, url('../products/macbook_air_2x.jpeg')2x);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .airpods {
+    background-image: image-set(url('../products/airpods_pro.jpeg')1x, url('../products/airpods_pro_2x.jpeg')2x);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+/* grid 설정 */
+
+.grid-container{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.cols-1{
+  grid-column: span 2;
+}
+
+/* 1024px 이상 (데스크탑) */
+
+@media (min-width: 1024px){
+  
+  .lg-cols-2{
+    grid-column: span 1;
+  }
+  
+  .title {
+    font-size: var(--extra-large-text);
+  }
+  .subT {
+    font-size: var(--medium-text);
+    /* line-height: var(--line-normal); */
+  }
+  button {
+    font-size: var(--x-small-text);
+    width: 100px;
+    height: 35px;
+  }
+  .subTarea {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--small-spacing);
+  }
+  .subT::after {
+    content: "\00a0";
+  }
+
+  .ipadPro {
+    background-image: image-set(url('../products/ipad_pro_wide.jpeg')1x, url('../products/ipad_pro_wide_2x.jpeg')2x);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    aspect-ratio: 16/9;
+  }
+  .ipadAir {
+    background-image: image-set(url('../products/ipad_air_wide.jpeg')1x, url('../products/ipad_air_wide_2x.jpeg')2x);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    aspect-ratio: 16/9;
+  }
+  .iphonePro {
+    background-image: image-set(url('../products/iphone15_pro_wide.jpeg')1x, url('../products/iphone15_pro_wide_2x.jpeg')2x);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    aspect-ratio: 16/9;
+  }
+}
